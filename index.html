@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>下载股票历史交易数据</title>
+		<script type="text/javascript" src="http://www.sinaimg.cn/cj/financewidget/js/SuggestServer_3_0_11.js"></script>
+        <script type="text/javascript" src="common.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+<body>
+<div class="container">
+  <h2>下载股票历史数据</h2>
+  <div class="chooseBox">
+     <ul class="choose">
+	    <li>
+		  股票代码：<input type="text" id="inputSuggest" name="q" value="" placeholder="输入代码或名称" onchange="checkData(this)"/>
+		</li>
+	    <li>
+		  <span>时间:</span><input type="text" placeholder="输入格式YYYY-MM-DD" id="timeFrom"/>to
+		  <input type="text" placeholder="输入格式YYYY-MM-DD" id="timeTo"/>
+		</li>
+		<li>
+		  <span class="link">下载数据</span>
+		  <div class="downloadData">
+		     <ul class="items">
+			    <li><input type="checkbox" value="TCLOSE">收盘价</li>
+				<li><input type="checkbox" value="HIGH">最高价</li>
+				<li><input type="checkbox" value="LOW">最低价</li>
+				<li><input type="checkbox" value="TOPEN">开盘价</li>
+				<li><input type="checkbox" value="LCLOSE">前收盘</li>
+				<li><input type="checkbox" value="CHG">涨跌额</li>
+				<li><input type="checkbox" value="PCHG">涨跌幅</li>
+				<li><input type="checkbox" value="VOTURNOVER">成交量</li>
+				<li><input type="checkbox" value="VATURNOVER">成交金额</li>
+				<li style="margin-top:20px;"><input type="button" value="确定下载" id="queryBtn" onclick="buildQueryLink()"/></li>
+			 </ul>
+		  </div>
+		</li>
+	 </ul>
+  </div>
+</div>
+   
+<script type="text/javascript">
+	var suggestServer = new SuggestServer();
+	suggestServer.bind({
+		"input": "inputSuggest",
+		//~  "loader": "suggest_loader",
+		"type": "",
+		"max": 10,
+		"width": 350,
+		//~  "head": ["选项", "类型", "代码", "全称", "中文名称", "拼音"],
+		//~  "body": [-1, -2, 2, 3, 4, 5],
+		"head": ["选项", "类型", "代码", "中文名称"],
+		"body": [-1, -2, 2, 4],
+		"fix": {
+		  "ie6": [0, -1],
+		  "ie7": [0, -1],
+		  "firefox": [1, 1]
+		},
+		"callback": null
+	});
+			
+	function $(__stringId) {
+		return document.getElementById(__stringId);
+	}
+	function aevent(__elementTarget, __stringType, __functionEvent) {
+		if (window.addEventListener) {
+				__elementTarget.addEventListener(__stringType, __functionEvent, false);
+		} else if (window.attachEvent) {
+				__elementTarget.attachEvent("on" + __stringType, __functionEvent);
+		}
+	}
+
+</script>
+</body>
+</html>
+
+

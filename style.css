@@ -1,0 +1,75 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+.container
+{
+	text-align:center;
+}
+.container h2
+{
+	font-size:30px;
+	margin:30px auto;
+	letter-spacing:2px;
+}
+.chooseBox ul li
+{
+	list-style:none;
+	display:inline-block;
+	margin-right:30px;
+	font-size:22px;
+}
+.chooseBox ul li span
+{
+	margin-right:10px;
+}
+.chooseBox ul li input
+{
+	height:35px;
+}
+.chooseBox ul li input[type="button"]
+{
+	border:0;
+	background:darkblue;
+	color:white;
+	width:100px;
+	height:35px;
+}
+.chooseBox ul li input[type="button"]:hover
+{
+	cursor:pointer;
+	background:blue;
+}
+.link
+{
+	display:inline-block;
+	width:120px;
+	height:35px;
+	line-height:35px;
+	background:blue;
+	color:white;
+	cursor:pointer;
+}
+.downloadData
+{
+	display:none;
+	
+}
+.downloadData ul
+{
+	position:absolute;
+	border:1px solid #ccc;
+	width:300px;
+	padding:10px 0 10px 20px;
+}
+.downloadData ul  li
+{
+	display:list-item;
+	text-align:left;
+}
+.downloadData ul  li input[type="checkbox"]
+{
+	width:20px;
+	height:20px;
+}
